@@ -1,0 +1,9 @@
+some systems miss these groups and show errors but you can safely ignore them anyway since we have a workaround with mtab, hosts and resolv.conf:
+systemd-journal-remote(remote filesystem)
+audio
+disk
+kvm
+systemd-journal
+systemd-network
+utmp
+users
