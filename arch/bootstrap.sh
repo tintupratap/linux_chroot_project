@@ -1,26 +1,8 @@
 #!/bin/bash
-#
-# arch-bootstrap: Bootstrap a base Arch Linux system using any GNU distribution.
-#
-# Dependencies: bash >= 4, coreutils, wget, sed, gawk, tar, gzip, chroot, xz.
-# Project: https://github.com/tokland/arch-bootstrap
-#
-# Install:
-#
-#   # install -m 755 arch-bootstrap.sh /usr/local/bin/arch-bootstrap
-#
-# Usage:
-#
-#   # arch-bootstrap destination
-#   # arch-bootstrap -a x86_64 -r ftp://ftp.archlinux.org destination-64
-#
-# And then you can chroot to the destination directory (user: root, password: root):
-#
-#   # chroot destination
 
 set -e -u -o pipefail
 
-# Packages needed by pacman (see get-pacman-dependencies.sh)
+# Packages needed by pacman (see pacman-dependencies.sh)
 PACMAN_PACKAGES=(
   acl archlinux-keyring attr bzip2 curl expat glibc gpgme libarchive
   libassuan libgpg-error libnghttp2 libssh2 lzo openssl pacman pacman-mirrorlist xz zlib
@@ -217,8 +199,7 @@ main() {
   
   debug "Done!"
   debug 
-  debug "You may now chroot or arch-chroot from package arch-install-scripts:"
-  debug "$ sudo arch-chroot $DEST"
+  debug "You may now chroot into $DEST or run post-install.sh script to proceed post installation mods"
 }
 
 main "$@"
