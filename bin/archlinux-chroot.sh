@@ -53,9 +53,13 @@ start_chroot_archlinux()
 
 }
 
+if [ "$*" == "" ]; then
+	echo "	Usage: 'sudo $0 start|mount|umount'" 
+  	exit 1
+fi
 if [ $1 = "help" ]; then
 	echo "	Usage: 'sudo $0 start|mount|umount'" 
-	exit 0
+	exit 1
 fi
 if [ $1 = "umount" ]; then
 	umount_chroot_archlinux
