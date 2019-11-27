@@ -1,4 +1,5 @@
 cd
+echo "LOGGED_IN"> /home/arch/.logincheck
 #
 # ~/.bashrc
 #
