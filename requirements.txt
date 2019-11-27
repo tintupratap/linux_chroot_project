@@ -1,0 +1,1 @@
+bash >= 4, coreutils, wget, sed, gawk, tar, gzip, chroot, xz
