@@ -23,8 +23,6 @@ $CHROOTC $CHROOTDEST /usr/bin/chown arch:arch /home/arch/
 
 cp inside_chroot/home/arch/.bashrc $CHROOTDEST/home/arch/.bashrc
 
-cp inside_chroot/home/arch/.bash_logout $CHROOTDEST/home/arch/.bash_logout
-
 echo "Post installation complete"
 
 echo "Now you can login with regualar user 'arch', \
