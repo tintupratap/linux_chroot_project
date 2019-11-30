@@ -1,0 +1,2 @@
+debootstrap switches to https and fetches the packages securely.. 
+this warning can be safely ignored..
