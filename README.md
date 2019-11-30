@@ -7,7 +7,7 @@ ArchLinux(to install, run sequence.sh with sudo)
 
 
 
-WIP directory contains Work in Progress(To-do-list):
+This branch contains Work in Progress(To-do-list):
 Debian
 Ubuntu
 Kali
