@@ -6,7 +6,7 @@ $CHROOTC $CHROOTDEST /usr/bin/pacman \
 --noconfirm -Sy --overwrite "*" \
 bash-completion sudo neofetch vi \
 which python-pip python-virtualenv \
-python-virtualenvwrapper git
+python-virtualenvwrapper git htop links
 
 $CHROOTC $CHROOTDEST /usr/bin/useradd arch
 
@@ -16,13 +16,13 @@ $CHROOTC $CHROOTDEST /usr/bin/passwd arch
 
 echo "arch ALL=(ALL) ALL" >> /opt/Linux-Distros/arch/etc/sudoers
 
-cp inside_chroot/root/.bashrc $CHROOTDEST/root/.bashrc
+cp ./inside_chroot/root/.bashrc $CHROOTDEST/root/.bashrc
 
 mkdir -p $CHROOTDEST/home/arch/
 
 $CHROOTC $CHROOTDEST /usr/bin/chown arch:arch /home/arch/
 
-cp inside_chroot/home/arch/.bashrc $CHROOTDEST/home/arch/.bashrc
+cp ./inside_chroot/home/arch/.bashrc $CHROOTDEST/home/arch/.bashrc
 
 echo "Post installation complete"
 
