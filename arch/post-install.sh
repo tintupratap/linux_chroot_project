@@ -1,6 +1,7 @@
 CHROOTDEST=/opt/Linux-Distros/arch
-CHROOTC="LC_ALL=C chroot"
-
+#CHROOTC="LC_ALL=C chroot"
+export LC_ALL=C
+CHROOTC="chroot"
 $CHROOTC $CHROOTDEST /usr/bin/pacman \
 --noconfirm -Sy --overwrite "*" \
 bash-completion sudo neofetch vi \

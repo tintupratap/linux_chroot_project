@@ -8,4 +8,7 @@ systemd-network
 utmp
 users
 
+current root not booted
+failed to parse ACL
+
 If there are other errors, let me know by pull request..
