@@ -1,6 +1,6 @@
 CHROOTDEST=/opt/Linux-Distros/arch/
 
-bash ./arch/arch-bootstrap.sh $CHROOTDEST
+bash ./arch/bootstrap.sh $CHROOTDEST
 
 bash ./arch/post-install.sh
 
