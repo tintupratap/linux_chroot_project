@@ -47,7 +47,9 @@ uncompress() {
       tar xzf "$FILEPATH" -C "$DEST";;
     *.xz) 
       xz -dc "$FILEPATH" | tar x -C "$DEST";;
-    *) 
+    *.zst)
+      tar -I zstd -xvf "$FILEPATH" -C "$DEST";; ##tar -I zstd -xvf archive.tar.zst
+    *)
       debug "Error: unknown package format: $FILEPATH"
       return 1;;
   esac
@@ -121,7 +123,7 @@ install_pacman_packages() {
   debug "pacman package and dependencies: $BASIC_PACKAGES"
   
   for PACKAGE in $BASIC_PACKAGES; do
-    local FILE=$(echo "$LIST" | grep -m1 "^$PACKAGE-[[:digit:]].*\(\.gz\|\.xz\)$")
+    local FILE=$(echo "$LIST" | grep -m1 "^$PACKAGE-[[:digit:]].*\(\.gz\|\.xz\|\.zst\)$")
     test "$FILE" || { debug "Error: cannot find package: $PACKAGE"; return 1; }
     local FILEPATH="$DOWNLOAD_DIR/$FILE"
     
